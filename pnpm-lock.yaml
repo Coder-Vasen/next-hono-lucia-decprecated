@@ -12,6 +12,9 @@ importers:
 
   .:
     dependencies:
+      '@hono/swagger-ui':
+        specifier: ^0.4.1
+        version: 0.4.1(hono@4.6.7)
       '@hono/zod-openapi':
         specifier: ^0.16.4
         version: 0.16.4(hono@4.6.7)(zod@3.23.8)
@@ -99,6 +102,9 @@ importers:
       next:
         specifier: 15.0.1
         version: 15.0.1(@babel/core@7.24.5)(react-dom@19.0.0-rc-69d4b800-20241021(react@19.0.0-rc-69d4b800-20241021))(react@19.0.0-rc-69d4b800-20241021)
+      next-hono-lucia:
+        specifier: 'link:'
+        version: 'link:'
       next-themes:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@19.0.0-rc-69d4b800-20241021(react@19.0.0-rc-69d4b800-20241021))(react@19.0.0-rc-69d4b800-20241021)
@@ -857,6 +863,11 @@ packages:
 
   '@floating-ui/utils@0.2.8':
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
+
+  '@hono/swagger-ui@0.4.1':
+    resolution: {integrity: sha512-kPaJatHffeYQ3yVkHo878hCqwfapqx54FczJVJ+eRWt8J4biyVVMIdCAJb6MyA8bcnHUoTmUpPc7OJAV1VTg2g==}
+    peerDependencies:
+      hono: '*'
 
   '@hono/zod-openapi@0.16.4':
     resolution: {integrity: sha512-mnF6GthBaKex0D5PsY/4lYNtkaGJNE38bjeUI//EUqq7Ee4TNm2su35IUiFH4HcmJp5fWYMLyOJOpjnkClzEGw==}
@@ -5189,6 +5200,10 @@ snapshots:
       react-dom: 19.0.0-rc-69d4b800-20241021(react@19.0.0-rc-69d4b800-20241021)
 
   '@floating-ui/utils@0.2.8': {}
+
+  '@hono/swagger-ui@0.4.1(hono@4.6.7)':
+    dependencies:
+      hono: 4.6.7
 
   '@hono/zod-openapi@0.16.4(hono@4.6.7)(zod@3.23.8)':
     dependencies:

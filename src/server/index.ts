@@ -1,12 +1,12 @@
-import { OpenAPIHono } from '@hono/zod-openapi';
-import { apiReference } from '@scalar/hono-api-reference';
-import { getCookie, setCookie } from 'hono/cookie';
-
 import { authApp } from '@/server/routes/auth';
 import { secretApp } from '@/server/routes/secret';
 import type { ContextVariables } from '@/server/types';
 import { lucia } from '@/services/auth';
 import { db } from '@/services/db';
+import { swaggerUI } from '@hono/swagger-ui';
+import { OpenAPIHono } from '@hono/zod-openapi';
+import { apiReference } from '@scalar/hono-api-reference';
+import { getCookie, setCookie } from 'hono/cookie';
 
 const app = new OpenAPIHono<{ Variables: ContextVariables }>();
 
@@ -55,6 +55,13 @@ app.get(
         spec: {
             url: '/api/swagger.json',
         },
+    })
+);
+
+app.get(
+    '/api/ui',
+    swaggerUI({
+        url: '/api/swagger.json',
     })
 );
 
